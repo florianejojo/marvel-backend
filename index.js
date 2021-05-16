@@ -17,7 +17,10 @@ const comicsRoutes = require("./routes/comics");
 app.use(comicsRoutes);
 
 app.get("/", (req, res) => {
-    res.status(400).json("Welcome to Floriane's server ! ");
+    res.status(200).json("Welcome to Floriane's server ! ");
+});
+app.all("*", (req, res) => {
+    res.status(400).json("Bad gataway");
 });
 
 app.listen(process.env.PORT, () => {
