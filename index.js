@@ -13,7 +13,12 @@ const charactersRoutes = require("./routes/characters");
 app.use(charactersRoutes);
 
 const comicsRoutes = require("./routes/comics");
+
 app.use(comicsRoutes);
+
+app.get("/", (req, res) => {
+    res.status(400).json("Welcome to Floriane's server ! ");
+});
 
 app.listen(process.env.PORT, () => {
     console.log("Server has started");
